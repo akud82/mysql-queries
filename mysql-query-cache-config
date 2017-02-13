@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mysql -u root -h 127.0.0.1 -e "show session variables like 'query_cache_%'"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+result=$(mysql -u root -h 127.0.0.1 -e "show session variables like 'have_query_cache' \G" | sed -ne "3 s/.*:\s//p")
+
+echo $result
+
+if [ $result = "YES" ]; then
+    exit 0
+else
+    exit 1    
+fi
